@@ -110,6 +110,7 @@ public class OcclusionCullingInstance {
         }
 
         // check if target is already known
+        System.out.print("1: ");
         return cache.getState(x + reach, y + reach, z + reach);
     }
 
@@ -176,6 +177,7 @@ public class OcclusionCullingInstance {
         for (int v = 0; v < size; v++) {
             // ray-casting target
             Vec3d target = targets[v];
+        	System.out.println(String.format("Raytracing from %s to %s", start, start.add(target)));
 
             double relativeX = start.x + target.getX();
             double relativeY = start.y + target.getY();
@@ -303,6 +305,7 @@ public class OcclusionCullingInstance {
                 + reach);
 
             // get cached value, 0 means uncached (default)
+            System.out.print("2: ");
             int cVal = cache.getState(curToStartX, curToStartY, curToStartZ);
 
             if (cVal == 2) {
