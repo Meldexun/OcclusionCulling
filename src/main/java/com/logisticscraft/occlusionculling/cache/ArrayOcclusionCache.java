@@ -38,7 +38,6 @@ public class ArrayOcclusionCache implements OcclusionCache {
 
     @Override
     public int getState(int x, int y, int z) {
-    	System.out.println(String.format("Cache access: %d %d %d", x, y, z));
         positionKey = x + y * reachX2 + z * reachX2 * reachX2;
         entry = positionKey / 4;
         offset = (positionKey % 4) * 2;
